@@ -45,6 +45,37 @@ export interface PortfolioConfig {
     achievements: string[];
     technologies: string[];
   }>;
+  education: Array<{
+    degree: string;
+    institution: string;
+    location: string;
+    duration: string;
+    gpa: string;
+    description: string;
+    highlights: string[];
+    coursework: string[];
+  }>;
+  certifications: Array<{
+    name: string;
+    issuer: string;
+    date: string;
+    expiry: string;
+    credentialId: string;
+    verificationUrl: string;
+    description: string;
+    skills: string[];
+    featured: boolean;
+  }>;
+  awards: Array<{
+    title: string;
+    issuer: string;
+    date: string;
+    category: string;
+    description: string;
+    details: string;
+    achievement: string;
+    featured: boolean;
+  }>;
   projects: Array<{
     title: string;
     description: string;
@@ -90,6 +121,9 @@ export const getIconComponent = (iconName: string) => {
     User: 'User', 
     Code: 'Code',
     Briefcase: 'Briefcase',
+    GraduationCap: 'GraduationCap',
+    Award: 'Award',
+    Trophy: 'Trophy',
     FolderOpen: 'FolderOpen',
     Mail: 'Mail',
     Palette: 'Palette',
@@ -101,7 +135,11 @@ export const getIconComponent = (iconName: string) => {
     Globe: 'Globe',
     Coffee: 'Coffee',
     Heart: 'Heart',
-    Lightbulb: 'Lightbulb'
+    Lightbulb: 'Lightbulb',
+    Calendar: 'Calendar',
+    MapPin: 'MapPin',
+    ExternalLink: 'ExternalLink',
+    CheckCircle: 'CheckCircle'
   };
   
   return icons[iconName as keyof typeof icons] || 'Code';

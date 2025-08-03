@@ -119,6 +119,135 @@
       "technologies": ["React", "JavaScript", "SCSS", "Webpack", "Jest"]
     }
   ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University of Technology",
+      "location": "San Francisco, CA",
+      "duration": "2015 - 2019",
+      "gpa": "3.8/4.0",
+      "description": "Focused on software engineering, algorithms, and data structures. Graduated Magna Cum Laude.",
+      "highlights": [
+        "Magna Cum Laude graduate with 3.8 GPA",
+        "President of Computer Science Student Association",
+        "Led team project that won university-wide hackathon",
+        "Teaching Assistant for Data Structures course"
+      ],
+      "coursework": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Web Development", "Mobile App Development"]
+    },
+    {
+      "degree": "Associate Degree in Web Development",
+      "institution": "Community College of Technology",
+      "location": "San Francisco, CA", 
+      "duration": "2013 - 2015",
+      "gpa": "3.9/4.0",
+      "description": "Foundation in web technologies and programming fundamentals.",
+      "highlights": [
+        "Valedictorian with perfect 4.0 GPA in final year",
+        "Dean's List for all semesters",
+        "Web Development Club founder and president"
+      ],
+      "coursework": ["HTML/CSS", "JavaScript", "PHP", "MySQL", "Responsive Design", "User Interface Design"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect - Professional",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "expiry": "2026",
+      "credentialId": "AWS-SAP-2023-001234",
+      "verificationUrl": "https://aws.amazon.com/verification",
+      "description": "Advanced certification demonstrating expertise in designing distributed applications and systems on AWS.",
+      "skills": ["AWS", "Cloud Architecture", "Scalability", "Security", "Cost Optimization"],
+      "featured": true
+    },
+    {
+      "name": "Google Professional Cloud Developer",
+      "issuer": "Google Cloud",
+      "date": "2023",
+      "expiry": "2025",
+      "credentialId": "GCP-PCD-2023-567890",
+      "verificationUrl": "https://cloud.google.com/certification/verification",
+      "description": "Expertise in building scalable applications using Google Cloud technologies.",
+      "skills": ["Google Cloud Platform", "Kubernetes", "Docker", "Microservices"],
+      "featured": true
+    },
+    {
+      "name": "Meta Certified React Developer",
+      "issuer": "Meta",
+      "date": "2022",
+      "expiry": "2025",
+      "credentialId": "META-RD-2022-123456",
+      "verificationUrl": "https://developers.facebook.com/certification",
+      "description": "Advanced React development skills including hooks, context, and performance optimization.",
+      "skills": ["React", "JavaScript", "Redux", "Testing", "Performance"],
+      "featured": false
+    },
+    {
+      "name": "MongoDB Certified Developer",
+      "issuer": "MongoDB University",
+      "date": "2022",
+      "expiry": "Never",
+      "credentialId": "MONGO-DEV-2022-789012",
+      "verificationUrl": "https://university.mongodb.com/certification",
+      "description": "Comprehensive knowledge of MongoDB database design and development.",
+      "skills": ["MongoDB", "NoSQL", "Database Design", "Aggregation", "Indexing"],
+      "featured": false
+    }
+  ],
+  "awards": [
+    {
+      "title": "Developer of the Year 2023",
+      "issuer": "TechCorp Inc.",
+      "date": "2023",
+      "category": "Professional Achievement",
+      "description": "Recognized for outstanding contributions to product development and team leadership.",
+      "details": "Selected from over 200 developers company-wide for exceptional performance, innovation, and mentorship.",
+      "achievement": "Led development of flagship product feature that increased user engagement by 45%",
+      "featured": true
+    },
+    {
+      "title": "Best Mobile App - FinTech Category",
+      "issuer": "Mobile Innovation Awards",
+      "date": "2023",
+      "category": "Industry Recognition",
+      "description": "Won first place for innovative mobile banking application.",
+      "details": "Competed against 150+ submissions from companies worldwide.",
+      "achievement": "Built complete mobile app that revolutionized digital banking experience",
+      "featured": true
+    },
+    {
+      "title": "Open Source Contributor of the Month",
+      "issuer": "GitHub",
+      "date": "2022",
+      "category": "Community Contribution",
+      "description": "Recognized for significant contributions to open source projects.",
+      "details": "Contributed to 15+ open source repositories with over 500 commits.",
+      "achievement": "Key contributor to popular React UI component library with 10k+ stars",
+      "featured": false
+    },
+    {
+      "title": "Hackathon Winner - AI/ML Track",
+      "issuer": "Bay Area Tech Hackathon",
+      "date": "2022",
+      "category": "Competition",
+      "description": "First place winner in 48-hour hackathon with AI-powered solution.",
+      "details": "Led team of 4 developers to create innovative machine learning application.",
+      "achievement": "Built AI-powered job matching platform in 48 hours",
+      "featured": false
+    },
+    {
+      "title": "Academic Excellence Award",
+      "issuer": "University of Technology",
+      "date": "2019",
+      "category": "Academic",
+      "description": "Awarded to top 5% of graduating class for academic achievement.",
+      "details": "Maintained 3.8+ GPA throughout 4-year program while working part-time.",
+      "achievement": "Graduated Magna Cum Laude with distinction in Computer Science",
+      "featured": false
+    }
+  ],
   "projects": [
     {
       "title": "E-Commerce Platform",
@@ -194,7 +323,6 @@
     }
   ],
   "navigation": [
-    { "name": "Home", "href": "#home", "icon": "Home" },
     { "name": "About", "href": "#about", "icon": "User" },
     { "name": "Skills", "href": "#skills", "icon": "Code" },
     { "name": "Experience", "href": "#experience", "icon": "Briefcase" },

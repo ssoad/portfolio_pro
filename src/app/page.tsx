@@ -2,7 +2,10 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
+import { Certifications } from "@/components/Certifications";
 import { Projects } from "@/components/Projects";
+import { Awards } from "@/components/Awards";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import BottomNavigation from "@/components/BottomNavigation";
@@ -16,7 +19,10 @@ export default function Home() {
         <About />
         <Skills />
         <Experience />
+        <Education />
+        <Certifications />
         <Projects />
+        <Awards />
         <Contact />
       </main>
       <BottomNavigation />
