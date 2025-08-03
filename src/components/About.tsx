@@ -49,23 +49,23 @@ export function About() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg blur-lg"></div>
-              <div className="relative bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                    <Coffee className="text-white" size={28} />
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg blur-lg"></div>
+              <div className="relative bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-xl shadow-xl">
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                    <Coffee className="text-white" size={20} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
                       Passionate Developer
                     </h3>
                     <p className="text-blue-600 dark:text-blue-400 font-semibold">
@@ -74,17 +74,17 @@ export function About() {
                   </div>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
                   {config.about.summary}
                 </p>
 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
                   {config.about.description}
                 </p>
 
                 <div className="flex items-center gap-2 text-red-500">
-                  <Heart size={20} fill="currentColor" />
-                  <span className="text-gray-600 dark:text-gray-300">
+                  <Heart size={16} className="sm:w-5 sm:h-5" fill="currentColor" />
+                  <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                     Made with love and lots of coffee
                   </span>
                 </div>
@@ -97,7 +97,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           >
             {highlights.map((highlight, index) => {
               const IconComponent = highlight.iconComponent;
@@ -112,12 +112,12 @@ export function About() {
                   className="group cursor-pointer"
                 >
                   <div className="relative">
-                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="text-white" size={24} />
+                    <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="text-white" size={20} />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                         {highlight.title}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">

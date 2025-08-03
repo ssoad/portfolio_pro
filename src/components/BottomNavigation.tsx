@@ -64,7 +64,7 @@ export default function BottomNavigation() {
       <div className="absolute inset-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-t border-gray-200/50 dark:border-gray-700/50"></div>
       
       {/* Navigation items */}
-      <div className="relative flex justify-around items-center py-2 px-4 safe-area-pb">
+      <div className="relative flex items-center py-2 px-2 safe-area-pb overflow-hidden">
         {bottomNavItems.map((item) => {
           const IconComponent = item.icon;
           const isActive = activeSection === item.href.substring(1);
@@ -74,7 +74,7 @@ export default function BottomNavigation() {
               key={item.name}
               onClick={() => scrollToSection(item.href)}
               className={cn(
-                "flex flex-col items-center justify-center p-2 rounded-xl transition-all duration-300 min-w-0 flex-1",
+                "flex flex-col items-center justify-center p-1.5 rounded-xl transition-all duration-300 min-w-0 flex-1 max-w-[80px]",
                 isActive
                   ? "bg-blue-500/10 dark:bg-blue-400/10"
                   : "hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -83,7 +83,7 @@ export default function BottomNavigation() {
               {/* Icon with active indicator */}
               <div className="relative">
                 <IconComponent 
-                  size={20} 
+                  size={18} 
                   className={cn(
                     "transition-all duration-300",
                     isActive 
@@ -99,9 +99,9 @@ export default function BottomNavigation() {
               {/* Label */}
               <span 
                 className={cn(
-                  "text-xs mt-1 font-medium transition-all duration-300 truncate",
+                  "text-[10px] mt-1 font-medium transition-all duration-300 truncate leading-tight max-w-full",
                   isActive 
-                    ? "text-blue-600 dark:text-blue-400 scale-105" 
+                    ? "text-blue-600 dark:text-blue-400" 
                     : "text-gray-600 dark:text-gray-400"
                 )}
               >
@@ -110,7 +110,7 @@ export default function BottomNavigation() {
               
               {/* Active indicator line */}
               {isActive && (
-                <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
               )}
             </button>
           );

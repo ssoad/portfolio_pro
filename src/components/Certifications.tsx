@@ -55,7 +55,7 @@ export function Certifications() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -65,19 +65,19 @@ export function Certifications() {
               viewport={{ once: true }}
               className="bg-slate-50 dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <div className="p-6">
-                <div className="flex items-start gap-4 mb-4">
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-xl flex items-center justify-center">
-                      <Award className="text-white" size={24} />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-xl flex items-center justify-center">
+                      <Award className="text-white" size={20} />
                     </div>
                   </div>
                   
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
                       {cert.name}
                     </h3>
-                    <p className="text-green-600 dark:text-green-400 font-semibold mb-2">
+                    <p className="text-green-600 dark:text-green-400 font-semibold mb-2 text-sm sm:text-base">
                       {cert.issuer}
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">

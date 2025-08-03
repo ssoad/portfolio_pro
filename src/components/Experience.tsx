@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Calendar, ExternalLink, Briefcase } from "lucide-react";
+import { Calendar, Briefcase, MapPin } from "lucide-react";
 import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
@@ -14,47 +14,7 @@ const sectionContent = config.navigation.sections.find(section => section.id ===
 };
 
 export function Experience() {
-  const experiences = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
-      description: [
-        "Led development of a React-based dashboard serving 10k+ users daily",
-        "Improved application performance by 40% through optimization techniques",
-        "Mentored junior developers and conducted code reviews",
-        "Collaborated with product team to define technical requirements"
-      ],
-      technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"]
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Innovations Inc",
-      period: "2020 - 2022",
-      location: "Austin, TX",
-      description: [
-        "Built and maintained multiple client-facing web applications",
-        "Implemented RESTful APIs and microservices architecture",
-        "Reduced bug reports by 60% through comprehensive testing strategies",
-        "Participated in agile development processes and sprint planning"
-      ],
-      technologies: ["React", "Python", "Django", "AWS", "MongoDB"]
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartupXYZ",
-      period: "2019 - 2020",
-      location: "Remote",
-      description: [
-        "Developed responsive web interfaces using modern JavaScript frameworks",
-        "Collaborated with UX/UI designers to implement pixel-perfect designs",
-        "Optimized website performance and improved SEO rankings",
-        "Integrated third-party APIs and payment processing systems"
-      ],
-      technologies: ["JavaScript", "Vue.js", "CSS3", "HTML5", "Stripe API"]
-    }
-  ];
+  const experiences = config.experience;
 
   return (
     <section id="experience" className="py-12 md:py-20 bg-white dark:bg-gray-900">
@@ -77,9 +37,9 @@ export function Experience() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-blue-800"></div>
+          <div className="absolute left-3 sm:left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-blue-800"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -92,34 +52,45 @@ export function Experience() {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                <div className="absolute left-3 sm:left-4 md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 dark:bg-blue-400 rounded-full border-2 sm:border-4 border-white dark:border-gray-900 z-10"></div>
 
                 {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${
-                  index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+                <div className={`ml-8 sm:ml-12 md:ml-0 md:w-1/2 ${
+                  index % 2 === 0 ? "md:pr-8 lg:pr-12" : "md:pl-8 lg:pl-12"
                 }`}>
-                  <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className="flex items-center mb-3">
-                      <Briefcase className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" />
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                        {exp.title}
+                  <div className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div className="flex items-center mb-2 sm:mb-3">
+                      <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400 mr-2" />
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
+                        {exp.position}
                       </h3>
                     </div>
                     
-                    <h4 className="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">
+                    <h4 className="text-base sm:text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">
                       {exp.company}
                     </h4>
                     
-                    <div className="flex items-center text-gray-500 dark:text-gray-400 mb-4">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{exp.period}</span>
-                      <span>{exp.location}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center text-gray-500 dark:text-gray-400 mb-3 sm:mb-4 space-y-1 sm:space-y-0">
+                      <div className="flex items-center">
+                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                        <span className="text-sm sm:text-base">{exp.duration}</span>
+                      </div>
+                      {exp.location && (
+                        <div className="flex items-center sm:ml-4">
+                          <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                          <span className="text-sm sm:text-base">{exp.location}</span>
+                        </div>
+                      )}
                     </div>
 
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">
+                      {exp.description}
+                    </p>
+
                     <ul className="space-y-2 mb-4">
-                      {exp.description.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-gray-600 dark:text-gray-400 flex items-start">
-                          <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      {exp.achievements.map((item, itemIndex) => (
+                        <li key={itemIndex} className="text-sm sm:text-base text-gray-600 dark:text-gray-400 flex items-start">
+                          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-2 sm:mr-3 flex-shrink-0"></span>
                           {item}
                         </li>
                       ))}

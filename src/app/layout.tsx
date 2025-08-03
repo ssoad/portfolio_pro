@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   keywords: config.settings.seo.keywords,
   authors: [{ name: config.personal.name }],
   creator: config.personal.name,
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
   openGraph: {
     title: config.settings.seo.title,
     description: config.settings.seo.description,

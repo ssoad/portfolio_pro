@@ -68,7 +68,7 @@ export function Awards() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {awards.map((award, index) => {
             const IconComponent = getCategoryIcon(award.category);
             const colorClass = getCategoryColor(award.category);
@@ -82,11 +82,11 @@ export function Awards() {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
               >
-                <div className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
+                <div className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-4">
                     <div className="flex-shrink-0">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${colorClass} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="text-white" size={24} />
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${colorClass} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="text-white" size={20} />
                       </div>
                     </div>
                     
@@ -96,10 +96,10 @@ export function Awards() {
                           {award.category}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">
                         {award.title}
                       </h3>
-                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2 text-sm sm:text-base">
                         {award.issuer}
                       </p>
                     </div>

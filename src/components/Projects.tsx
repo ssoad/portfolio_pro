@@ -43,7 +43,7 @@ export function Projects() {
         </motion.div>
 
         {/* Featured Projects */}
-        <div className="space-y-12 mb-16">
+        <div className="space-y-8 sm:space-y-12 mb-12 sm:mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -51,33 +51,33 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`flex flex-col lg:flex-row items-center gap-8 ${
+              className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <div className="lg:w-1/2">
-                <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
+              <div className="w-full lg:w-1/2">
+                <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl">
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={600}
                     height={400}
-                    className="w-full h-80 object-cover transition-all duration-500 group-hover:scale-110"
+                    className="w-full h-48 sm:h-64 lg:h-80 object-cover transition-all duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                   <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </div>
               </div>
               
-              <div className="lg:w-1/2">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <div className="w-full lg:w-1/2">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 leading-relaxed">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -88,24 +88,24 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
-                                    <a
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+                    className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base"
                   >
                     <ExternalLink size={16} className="mr-2" />
                     Live Demo
                   </a>
-                  <a
+                                    <a
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition-colors duration-200"
+                    className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base"
                   >
                     <Github size={16} className="mr-2" />
-                    Source Code
+                    Code
                   </a>
                 </div>
               </div>

@@ -12,9 +12,9 @@ import BottomNavigation from "@/components/BottomNavigation";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
       <Navigation />
-      <main className="pb-20 md:pb-0">
+      <main className="pb-20 md:pb-0 overflow-x-hidden">
         <Hero />
         <About />
         <Skills />
