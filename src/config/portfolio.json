@@ -1,0 +1,223 @@
+{
+  "personal": {
+    "name": "John Doe",
+    "title": "Full Stack Developer",
+    "tagline": "I create beautiful, responsive web applications with modern technologies. Passionate about clean code and exceptional user experiences.",
+    "brand": "Portfolio",
+    "avatar": "/avatar.jpg"
+  },
+  "contact": {
+    "email": "john@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA",
+    "social": {
+      "github": "https://github.com/johndoe",
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "twitter": "https://twitter.com/johndoe",
+      "website": "https://johndoe.dev"
+    }
+  },
+  "about": {
+    "summary": "I'm a passionate full-stack developer with over 5 years of experience building web applications. I love creating digital experiences that not only look great but also solve real-world problems.",
+    "description": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee while planning my next project.",
+    "experience_years": "5+",
+    "highlights": [
+      {
+        "title": "Clean Code",
+        "description": "Writing maintainable, scalable solutions",
+        "icon": "Code"
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Creating beautiful, intuitive interfaces",
+        "icon": "Palette"
+      },
+      {
+        "title": "Performance",
+        "description": "Optimized for speed and efficiency",
+        "icon": "Zap"
+      },
+      {
+        "title": "Collaboration",
+        "description": "Team player with excellent communication",
+        "icon": "Users"
+      }
+    ]
+  },
+  "skills": {
+    "categories": [
+      {
+        "name": "Frontend",
+        "skills": [
+          { "name": "React", "level": 95 },
+          { "name": "TypeScript", "level": 90 },
+          { "name": "Next.js", "level": 88 },
+          { "name": "Tailwind CSS", "level": 92 },
+          { "name": "JavaScript", "level": 95 }
+        ]
+      },
+      {
+        "name": "Backend",
+        "skills": [
+          { "name": "Node.js", "level": 85 },
+          { "name": "Python", "level": 80 },
+          { "name": "PostgreSQL", "level": 75 },
+          { "name": "MongoDB", "level": 78 },
+          { "name": "Express.js", "level": 82 }
+        ]
+      },
+      {
+        "name": "Tools & Others",
+        "skills": [
+          { "name": "Git", "level": 90 },
+          { "name": "Docker", "level": 75 },
+          { "name": "AWS", "level": 70 },
+          { "name": "Figma", "level": 85 },
+          { "name": "VS Code", "level": 95 }
+        ]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "position": "Senior Full Stack Developer",
+      "company": "TechCorp Inc.",
+      "duration": "2022 - Present",
+      "location": "San Francisco, CA",
+      "description": "Lead development of scalable web applications using React, Node.js, and cloud technologies.",
+      "achievements": [
+        "Architected and built a real-time collaboration platform serving 10k+ users",
+        "Improved application performance by 40% through code optimization",
+        "Mentored 3 junior developers and conducted technical interviews"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"]
+    },
+    {
+      "position": "Full Stack Developer",
+      "company": "StartupXYZ",
+      "duration": "2020 - 2022",
+      "location": "Remote",
+      "description": "Built and maintained multiple client projects from concept to deployment.",
+      "achievements": [
+        "Developed 5+ production-ready applications using modern web technologies",
+        "Reduced deployment time by 60% by implementing CI/CD pipelines",
+        "Collaborated with design team to create pixel-perfect user interfaces"
+      ],
+      "technologies": ["Vue.js", "Python", "Django", "Docker", "MongoDB"]
+    },
+    {
+      "position": "Frontend Developer",
+      "company": "Digital Agency Pro",
+      "duration": "2019 - 2020",
+      "location": "New York, NY",
+      "description": "Specialized in creating responsive and interactive user interfaces for various clients.",
+      "achievements": [
+        "Converted 20+ Figma designs into responsive React components",
+        "Improved website loading speed by 50% through optimization techniques",
+        "Implemented accessibility standards achieving WCAG 2.1 AA compliance"
+      ],
+      "technologies": ["React", "JavaScript", "SCSS", "Webpack", "Jest"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "A full-featured e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format",
+      "technologies": ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
+      "features": [
+        "Real-time inventory tracking",
+        "Secure payment processing",
+        "Admin dashboard with analytics",
+        "Mobile-responsive design"
+      ],
+      "links": {
+        "live": "https://ecommerce-demo.vercel.app",
+        "github": "https://github.com/johndoe/ecommerce-platform"
+      },
+      "status": "completed",
+      "featured": true
+    },
+    {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, team workspaces, and progress tracking.",
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&auto=format",
+      "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
+      "features": [
+        "Real-time collaboration",
+        "Drag-and-drop interface",
+        "Team workspaces",
+        "Progress analytics"
+      ],
+      "links": {
+        "live": "https://taskmanager-demo.netlify.app",
+        "github": "https://github.com/johndoe/task-manager"
+      },
+      "status": "completed",
+      "featured": true
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": "A modern weather application with beautiful visualizations, location-based forecasts, and weather alerts.",
+      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop&auto=format",
+      "technologies": ["Vue.js", "Chart.js", "OpenWeather API", "CSS Grid"],
+      "features": [
+        "5-day weather forecast",
+        "Interactive weather maps",
+        "Severe weather alerts",
+        "Location-based suggestions"
+      ],
+      "links": {
+        "live": "https://weather-dashboard-demo.vercel.app",
+        "github": "https://github.com/johndoe/weather-dashboard"
+      },
+      "status": "completed",
+      "featured": false
+    },
+    {
+      "title": "Portfolio Website",
+      "description": "A responsive portfolio website built with modern technologies, featuring dark mode and smooth animations.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Responsive design",
+        "Dark/light mode toggle",
+        "Smooth animations",
+        "SEO optimized"
+      ],
+      "links": {
+        "live": "https://johndoe-portfolio.vercel.app",
+        "github": "https://github.com/johndoe/portfolio"
+      },
+      "status": "completed",
+      "featured": false
+    }
+  ],
+  "navigation": [
+    { "name": "Home", "href": "#home", "icon": "Home" },
+    { "name": "About", "href": "#about", "icon": "User" },
+    { "name": "Skills", "href": "#skills", "icon": "Code" },
+    { "name": "Experience", "href": "#experience", "icon": "Briefcase" },
+    { "name": "Projects", "href": "#projects", "icon": "FolderOpen" },
+    { "name": "Contact", "href": "#contact", "icon": "Mail" }
+  ],
+  "settings": {
+    "theme": {
+      "default": "system",
+      "colors": {
+        "primary": "blue",
+        "secondary": "purple"
+      }
+    },
+    "animations": {
+      "enabled": true,
+      "duration": 300
+    },
+    "seo": {
+      "title": "John Doe - Full Stack Developer Portfolio",
+      "description": "Professional portfolio of John Doe, a passionate full-stack developer specializing in React, Next.js, and modern web technologies.",
+      "keywords": ["John Doe", "Full Stack Developer", "React", "Next.js", "TypeScript", "Web Developer", "Portfolio"],
+      "ogImage": "/og-image.jpg"
+    }
+  }
+}
