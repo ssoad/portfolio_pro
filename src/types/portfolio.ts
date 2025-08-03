@@ -89,11 +89,28 @@ export interface PortfolioConfig {
     status: string;
     featured: boolean;
   }>;
-  navigation: Array<{
-    name: string;
-    href: string;
-    icon: string;
-  }>;
+  navigation: {
+    sections: Array<{
+      id: string;
+      name: string;
+      href: string;
+      icon: string;
+      enabled: boolean;
+      showInNav: boolean;
+      order: number;
+      content: {
+        title: string;
+        subtitle: string;
+        description: string;
+      };
+    }>;
+    settings: {
+      maxNavItems: number;
+      showIcons: boolean;
+      mobileCollapse: boolean;
+      stickyNav: boolean;
+    };
+  };
   settings: {
     theme: {
       default: string;

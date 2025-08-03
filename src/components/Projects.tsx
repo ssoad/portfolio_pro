@@ -3,64 +3,19 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
+
+const config = getPortfolioConfig();
+
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'projects')?.content || {
+  title: "Featured Projects",
+  subtitle: "Things I've built", 
+  description: "A showcase of my best work and personal projects"
+};
 
 export function Projects() {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with shopping cart, payment processing, and admin dashboard. Built with modern technologies for optimal performance.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-      demoUrl: "https://demo-ecommerce.example.com",
-      githubUrl: "https://github.com/johndoe/ecommerce-platform",
-      featured: true
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&auto=format",
-      technologies: ["React", "Firebase", "Material-UI", "WebSockets"],
-      demoUrl: "https://taskapp-demo.example.com",
-      githubUrl: "https://github.com/johndoe/task-manager",
-      featured: true
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A responsive weather application that provides current weather data, forecasts, and interactive maps using weather APIs.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop&auto=format",
-      technologies: ["Vue.js", "OpenWeather API", "Chart.js", "CSS3"],
-      demoUrl: "https://weather-dashboard.example.com",
-      githubUrl: "https://github.com/johndoe/weather-dashboard",
-      featured: false
-    },
-    {
-      title: "Portfolio Website",
-      description: "A personal portfolio website showcasing projects and skills with modern design, smooth animations, and responsive layout.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop&auto=format",
-      technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
-      demoUrl: "https://portfolio.example.com",
-      githubUrl: "https://github.com/johndoe/portfolio",
-      featured: false
-    },
-    {
-      title: "Blog Platform",
-      description: "A full-featured blog platform with content management, user authentication, comments system, and SEO optimization.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b5a4?w=600&h=400&fit=crop&auto=format",
-      technologies: ["Node.js", "Express", "MongoDB", "React", "JWT"],
-      demoUrl: "https://blog-platform.example.com",
-      githubUrl: "https://github.com/johndoe/blog-platform",
-      featured: false
-    },
-    {
-      title: "Data Visualization Tool",
-      description: "An interactive data visualization tool that transforms complex datasets into meaningful charts and insights for business analytics.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format",
-      technologies: ["D3.js", "Python", "Flask", "PostgreSQL", "Bootstrap"],
-      demoUrl: "https://dataviz-tool.example.com",
-      githubUrl: "https://github.com/johndoe/data-viz",
-      featured: false
-    }
-  ];
+  const projects = config.projects;
 
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
@@ -79,10 +34,11 @@ export function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
+            {sectionContent.title}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience
+            {sectionContent.description}
           </p>
         </motion.div>
 
@@ -133,23 +89,23 @@ export function Projects() {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
-                    href={project.demoUrl}
+                                    <a
+                    href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
                   >
-                    <ExternalLink size={18} />
+                    <ExternalLink size={16} className="mr-2" />
                     Live Demo
                   </a>
                   <a
-                    href={project.githubUrl}
+                    href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1"
+                    className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition-colors duration-200"
                   >
-                    <Github size={18} />
-                    Code
+                    <Github size={16} className="mr-2" />
+                    Source Code
                   </a>
                 </div>
               </div>
@@ -217,7 +173,7 @@ export function Projects() {
 
                 <div className="flex justify-between">
                   <a
-                    href={project.demoUrl}
+                    href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm flex items-center gap-1"
@@ -226,7 +182,7 @@ export function Projects() {
                     Demo
                   </a>
                   <a
-                    href={project.githubUrl}
+                    href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 font-medium text-sm flex items-center gap-1"

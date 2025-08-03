@@ -322,13 +322,128 @@
       "featured": false
     }
   ],
-  "navigation": [
-    { "name": "About", "href": "#about", "icon": "User" },
-    { "name": "Skills", "href": "#skills", "icon": "Code" },
-    { "name": "Experience", "href": "#experience", "icon": "Briefcase" },
-    { "name": "Projects", "href": "#projects", "icon": "FolderOpen" },
-    { "name": "Contact", "href": "#contact", "icon": "Mail" }
-  ],
+  "navigation": {
+    "sections": [
+      {
+        "id": "about",
+        "name": "About",
+        "href": "#about",
+        "icon": "User",
+        "enabled": true,
+        "showInNav": true,
+        "order": 1,
+        "content": {
+          "title": "About Me",
+          "subtitle": "Get to know me better",
+          "description": "Learn about my background, skills, and what drives me as a developer"
+        }
+      },
+      {
+        "id": "skills",
+        "name": "Skills",
+        "href": "#skills", 
+        "icon": "Code",
+        "enabled": true,
+        "showInNav": true,
+        "order": 2,
+        "content": {
+          "title": "Technical Skills",
+          "subtitle": "Technologies I work with",
+          "description": "A comprehensive overview of my technical expertise and proficiency levels"
+        }
+      },
+      {
+        "id": "experience",
+        "name": "Experience",
+        "href": "#experience",
+        "icon": "Briefcase", 
+        "enabled": true,
+        "showInNav": true,
+        "order": 3,
+        "content": {
+          "title": "Work Experience",
+          "subtitle": "My professional journey",
+          "description": "Career highlights and achievements in various roles and companies"
+        }
+      },
+      {
+        "id": "education",
+        "name": "Education", 
+        "href": "#education",
+        "icon": "GraduationCap",
+        "enabled": true,
+        "showInNav": false,
+        "order": 4,
+        "content": {
+          "title": "Education",
+          "subtitle": "My educational journey",
+          "description": "Academic background and qualifications that shaped my career"
+        }
+      },
+      {
+        "id": "certifications",
+        "name": "Certifications",
+        "href": "#certifications", 
+        "icon": "Award",
+        "enabled": true,
+        "showInNav": false,
+        "order": 5,
+        "content": {
+          "title": "Certifications",
+          "subtitle": "Professional certifications",
+          "description": "Industry-recognized certifications and technical qualifications"
+        }
+      },
+      {
+        "id": "projects",
+        "name": "Projects",
+        "href": "#projects",
+        "icon": "FolderOpen",
+        "enabled": true,
+        "showInNav": true,
+        "order": 6,
+        "content": {
+          "title": "Featured Projects",
+          "subtitle": "Things I've built",
+          "description": "A showcase of my best work and personal projects"
+        }
+      },
+      {
+        "id": "awards",
+        "name": "Awards",
+        "href": "#awards",
+        "icon": "Trophy",
+        "enabled": true,
+        "showInNav": false,
+        "order": 7,
+        "content": {
+          "title": "Awards & Recognition",
+          "subtitle": "Achievements and honors",
+          "description": "Recognition for excellence and contributions in technology and leadership"
+        }
+      },
+      {
+        "id": "contact",
+        "name": "Contact",
+        "href": "#contact",
+        "icon": "Mail",
+        "enabled": true,
+        "showInNav": true,
+        "order": 8,
+        "content": {
+          "title": "Get In Touch",
+          "subtitle": "Let's work together",
+          "description": "Ready to start your next project? Let's discuss how I can help"
+        }
+      }
+    ],
+    "settings": {
+      "maxNavItems": 5,
+      "showIcons": true,
+      "mobileCollapse": true,
+      "stickyNav": true
+    }
+  },
   "settings": {
     "theme": {
       "default": "system",

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Home, User, Code, Briefcase, FolderOpen, Mail } from 'lucide-react';
+import { Home, User, Code, Briefcase, FolderOpen, Mail, GraduationCap, Award, Trophy } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
@@ -15,15 +15,21 @@ const iconMap = {
   Briefcase,
   FolderOpen,
   Mail,
+  GraduationCap,
+  Award,
+  Trophy,
 };
 
-const bottomNavItems = config.navigation.map(item => ({
-  ...item,
-  icon: iconMap[item.icon as keyof typeof iconMap] || Code,
-}));
+const bottomNavItems = config.navigation.sections
+  .filter(section => section.enabled && section.showInNav)
+  .sort((a, b) => a.order - b.order)
+  .map(item => ({
+    ...item,
+    icon: iconMap[item.icon as keyof typeof iconMap] || Code,
+  }));
 
 export default function BottomNavigation() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
     const handleScroll = () => {

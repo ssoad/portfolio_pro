@@ -6,6 +6,13 @@ import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
 
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'certifications')?.content || {
+  title: "Certifications",
+  subtitle: "Professional certifications",
+  description: "Industry-recognized certifications and technical qualifications"
+};
+
 export function Certifications() {
   const certifications = config.certifications;
 
@@ -40,11 +47,11 @@ export function Certifications() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Certifications
+            {sectionContent.title}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Professional certifications and technical qualifications
+            {sectionContent.description}
           </p>
         </motion.div>
 

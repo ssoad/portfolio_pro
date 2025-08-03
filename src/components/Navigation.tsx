@@ -6,11 +6,11 @@ import ThemeToggle from "./ThemeToggle";
 import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
-const navItems = config.navigation;
+const navItems = config.navigation.sections.filter(section => section.enabled && section.showInNav)
+  .sort((a, b) => a.order - b.order);
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("about");
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -41,7 +41,6 @@ export function Navigation() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false);
   };
 
   return (

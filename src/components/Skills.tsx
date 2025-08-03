@@ -5,6 +5,13 @@ import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
 
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'skills')?.content || {
+  title: "Technical Skills",
+  subtitle: "Technologies I work with",
+  description: "A comprehensive overview of my technical expertise and proficiency levels"
+};
+
 export function Skills() {
   const skillCategories = config.skills.categories;
 
@@ -22,10 +29,11 @@ export function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Skills & Expertise
+            {sectionContent.title}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life
+            {sectionContent.description}
           </p>
         </motion.div>
 

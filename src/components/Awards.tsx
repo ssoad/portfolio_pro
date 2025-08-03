@@ -6,6 +6,13 @@ import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
 
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'awards')?.content || {
+  title: "Awards & Recognition",
+  subtitle: "Achievements and honors",
+  description: "Recognition for excellence and contributions in technology and leadership"
+};
+
 export function Awards() {
   const awards = config.awards;
 
@@ -53,11 +60,11 @@ export function Awards() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Awards & Recognition
+            {sectionContent.title}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-600 to-orange-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Recognition for excellence and contributions in technology and leadership
+            {sectionContent.description}
           </p>
         </motion.div>
 

@@ -6,6 +6,13 @@ import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
 
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'education')?.content || {
+  title: "Education",
+  subtitle: "My educational journey",
+  description: "Academic background and qualifications that shaped my career"
+};
+
 export function Education() {
   const education = config.education;
 
@@ -20,11 +27,11 @@ export function Education() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Education
+            {sectionContent.title}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My educational journey and academic achievements
+            {sectionContent.description}
           </p>
         </motion.div>
 

@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Calendar } from "lucide-react";
+import { MapPin, Calendar, ExternalLink, Briefcase } from "lucide-react";
+import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
+
+const config = getPortfolioConfig();
+
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'experience')?.content || {
+  title: "Work Experience", 
+  subtitle: "My professional journey",
+  description: "Career highlights and achievements in various roles and companies"
+};
 
 export function Experience() {
   const experiences = [
@@ -57,10 +67,11 @@ export function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Work Experience
+            {sectionContent.title}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My professional journey and the impact I&apos;ve made along the way
+            {sectionContent.description}
           </p>
         </motion.div>
 

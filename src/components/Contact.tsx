@@ -3,6 +3,16 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
+import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
+
+const config = getPortfolioConfig();
+
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'contact')?.content || {
+  title: "Get In Touch",
+  subtitle: "Let's work together",
+  description: "Ready to start your next project? Let's discuss how I can help"
+};
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -65,11 +75,11 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In Touch
+            {sectionContent.title}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I&apos;m always interested in new opportunities and interesting projects. 
-            Let&apos;s discuss how we can work together!
+            {sectionContent.description}
           </p>
         </motion.div>
 

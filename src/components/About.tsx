@@ -6,6 +6,13 @@ import { getPortfolioConfig } from "@/hooks/usePortfolioConfig";
 
 const config = getPortfolioConfig();
 
+// Get section content from navigation
+const sectionContent = config.navigation.sections.find(section => section.id === 'about')?.content || {
+  title: "About Me",
+  subtitle: "Get to know me better", 
+  description: "Learn about my background, skills, and what drives me as a developer"
+};
+
 // Icon mapping
 const iconMap = {
   Code,
@@ -34,9 +41,12 @@ export function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            About Me
+            {sectionContent.title}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full"></div>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            {sectionContent.description}
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -129,7 +139,7 @@ export function About() {
           className="mt-16 text-center"
         >
           <div className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-            <span>Let's build something amazing together</span>
+            <span>Let&apos;s build something amazing together</span>
             <Zap size={20} />
           </div>
         </motion.div>
